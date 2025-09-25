@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Reservas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Sistema de Reservas de Salas e Laboratórios</h1>
+    </header>
+
+    <main>
+        <!-- Formulário -->
+        <section id="reserva">
+            <h2>Reservar Sala/Laboratório</h2>
+            <form id="formReserva">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" required>
+
+                <label for="curso">Curso:</label>
+                <select id="curso" required></select>
+
+                <label for="materia">Matéria:</label>
+                <select id="materia" required>
+                    <option value="">Selecione o curso primeiro</option>
+                </select>
+
+                <label for="turma">Turma:</label>
+                <input type="text" id="turma" required>
+
+                <label for="professor">Professor:</label>
+                <input type="text" id="professor" required>
+
+                <label for="sala">Sala/Laboratório:</label>
+                <select id="sala" required></select>
+
+                <label for="data">Data:</label>
+                <input type="date" id="data" required>
+
+                <label for="hora">Hora:</label>
+                <input type="time" id="hora" required>
+
+                <button type="submit">Reservar</button>
+            </form>
+        </section>
+
+        <!-- Lista de Reservas -->
+        <section id="listaReservas">
+            <h2>Reservas Realizadas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Curso</th>
+                        <th>Matéria</th>
+                        <th>Turma</th>
+                        <th>Professor</th>
+                        <th>Sala/Laboratório</th>
+                        <th>Data</th>
+                        <th>Hora</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody id="reservasTabela"></tbody>
+            </table>
+        </section>
+
+        <!-- Relatório -->
+        <section id="relatorio">
+            <h2>Relatório de Uso</h2>
+            <button id="gerarRelatorio">Gerar Relatório</button>
+            <div id="relatorioResultado"></div>
+            <canvas id="graficoRelatorio" width="400" height="200"></canvas>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
